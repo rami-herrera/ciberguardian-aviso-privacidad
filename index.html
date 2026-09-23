@@ -2,13 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CiberGuardian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,69 +15,62 @@
     }
 
     body {
-      width: 100%;
       min-height: 100vh;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      font-family: Arial, sans-serif;
-
       background: linear-gradient(
         135deg,
         #020617,
-        #061a40,
+        #0a2a5e,
         #0077b6,
         #00b4d8
       );
 
-      color: white;
+      font-family: "Poppins", sans-serif;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
+      padding-top: 30px;
       text-align: center;
-      letter-spacing: 2px;
+      font-size: 3rem;
+      font-weight: bold;
+    }
 
-      text-shadow:
-        0 0 20px rgba(0, 180, 216, 0.5);
+    .ciber {
+      color: white;
+    }
+
+    .guardian {
+      color: #62d9ff;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>CiberGuardian</h1>
+  <h1>
+    <span class="ciber">Ciber</span><span class="guardian">Guardian</span>
+  </h1>
 
 
-  <!-- Voiceflow Chatbot -->
+  <!-- Voiceflow -->
   <script type="text/javascript">
-    (function(d, t) {
-      var v = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
         window.voiceflow.chat.load({
-          verify: {
-            projectID: '6ab32707201bebb2c5cb3ff3'
-          },
-
+          verify: { projectID: '6ab32707201bebb2c5cb3ff3' },
           url: 'https://general-runtime.voiceflow.com',
-
           voice: {
             url: "https://runtime-api.voiceflow.com"
+          },
+          render: {
+            mode: 'embedded',
+            target: document.getElementById(...)
           }
         });
-      };
-
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      v.type = "text/javascript";
-
-      s.parentNode.insertBefore(v, s);
-
-    })(document, 'script');
-  </script>
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 
 </body>
 </html>
