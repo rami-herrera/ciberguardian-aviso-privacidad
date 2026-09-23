@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CiberGuardian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     * {
@@ -23,8 +27,8 @@
         #0077b6,
         #00b4d8
       );
-
       font-family: "Poppins", sans-serif;
+      color: white;
     }
 
     h1 {
@@ -41,6 +45,33 @@
     .guardian {
       color: #62d9ff;
     }
+
+    .chat-wrapper {
+      width: min(900px, calc(100% - 32px));
+      height: 700px;
+      margin: 30px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      background: #061426;
+    }
+
+    #voiceflow-chat {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .chat-wrapper {
+        width: calc(100% - 16px);
+        height: 80vh;
+        margin: 20px auto;
+      }
+    }
   </style>
 </head>
 
@@ -50,27 +81,37 @@
     <span class="ciber">Ciber</span><span class="guardian">Guardian</span>
   </h1>
 
+  <div class="chat-wrapper">
+    <div id="voiceflow-chat"></div>
+  </div>
 
-  <!-- Voiceflow -->
   <script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    (function(d, t) {
+      var v = d.createElement(t);
+      var s = d.getElementsByTagName(t)[0];
+
       v.onload = function() {
         window.voiceflow.chat.load({
-          verify: { projectID: '6ab32707201bebb2c5cb3ff3' },
+          verify: {
+            projectID: '6ab32707201bebb2c5cb3ff3'
+          },
           url: 'https://general-runtime.voiceflow.com',
           voice: {
-            url: "https://runtime-api.voiceflow.com"
+            url: 'https://runtime-api.voiceflow.com'
           },
           render: {
             mode: 'embedded',
-            target: document.getElementById(...)
+            target: document.getElementById('voiceflow-chat')
           }
         });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+      };
+
+      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+      v.type = 'text/javascript';
+
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
 
 </body>
 </html>
